@@ -1,3 +1,18 @@
+.color-bar {
+  min-height: 5vh;
+  width: 0%;
+}
+
+.color-bar, .active {
+  width: 100%;
+  transition: width ease-in-out .5s;
+}
+
+.title { 
+  margin:0; 
+  padding: 0; 
+}
+
 .App {
   text-align: center;
 }
@@ -42,8 +57,8 @@
   transition: transform .5s;
 }
 
-.line-icon :hover {
-  transform: Scale(1.5);
+.navigation button:hover {
+  transform: Scale(1);
   transition: all .5s;
 }
 

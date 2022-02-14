@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+
 import './App.css';
 import react from 'react';
 import $ from 'jquery';
@@ -176,6 +177,13 @@ class Display extends react.Component {
   }  
 
   render(){
+    
+    let color = this.state.currentLineKey;
+    if(color != null){
+      color = color.toLowerCase()
+    }
+    
+
     let table = null
     if(this.state.canLoadData){
       table =
@@ -191,6 +199,8 @@ class Display extends react.Component {
     }
     return (
       <div className='display'>
+        <div className={'color-bar' + ' active ' + color}></div>
+        <h1 className='title'>WMATA Real Time Prediction</h1>
         <Navigation
           lines={this.state.lines}
           onClick={(lineKey) => this.handleNavClick(lineKey)}
@@ -207,15 +217,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
         <Display/>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/griffinchozick/wmata-react-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          github or wmata website
+          Check out my github for other stuff
         </a>
       </header>
     </div>
